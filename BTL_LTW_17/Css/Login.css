@@ -1,0 +1,143 @@
+﻿* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Segoe UI'
+}
+
+:root {
+    --primary-color: #FE5621;
+    --anchor-color: blue;
+    --font-size-title: 40px;
+    --font-size-normal: 18px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--anchor-color);
+}
+
+    a:visited {
+        color: var(--anchor-color);
+    }
+
+.box {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    width: 700px;
+    height: fit-content;
+    padding: 20px;
+    box-shadow: 2px 2px 2px 5px #B9B9B9;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.text-title, .icon {
+    font-size: var(--font-size-title);
+    color: var(--primary-color);
+}
+
+.form-input {
+    display: flex;
+    flex-direction: column;
+}
+
+    .form-input > input {
+        padding: 10px;
+        font-size: var(--font-size-normal);
+        margin-top: 20px;
+        border-radius: 5px;
+        border: solid 1px #98968F;
+    }
+
+        .form-input > input:focus {
+            border: 2px solid var(--primary-color);
+            outline: none;
+        }
+
+.btn-login {
+    width: 100%;
+    padding: 10px 0px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    font-size: var(--font-size-normal);
+    font-family: 'Segoe UI';
+    margin-block: 20px;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+.another-login {
+    display: flex;
+    justify-content: space-between;
+}
+
+.connect-login-other-form {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+    .connect-login-other-form > div {
+        width: 30%;
+        padding: 5px 10px;
+        border: 1px solid #DBDBDB;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+        .connect-login-other-form > div > span {
+            margin-left: 10px;
+        }
+
+.fb {
+    font-size: 22px;
+    color: #5197E4;
+}
+
+.gg {
+    font-size: 22px;
+    color: #EE4D2D;
+}
+
+.ap {
+    font-size: 22px;
+}
+
+.redirect-register {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+    .redirect-register > a {
+        font-size: var(--font-size-normal);
+    }
+
+#alertFail {
+    margin-top: 10px;
+    display: none;
+    padding: 10px 5px;
+    font-size: 18px;
+    color: red;
+    align-items: center;
+}
+
+@media only screen and (max-width:768px) {
+    .content {
+        width: 80%;
+    }
+}

@@ -1,0 +1,133 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="BTL_LTW_17.WebForms.Site" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - DeliFood</title>
+    <link href="../Css/Site.css" rel="stylesheet" />
+    <link href="../Css/Home.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../fontawesome-free-6.2.1-web/css/all.min.css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <nav>
+            <div class="container">
+                <div id="logoHeader" class="nav-block logo-block">
+                    <a href="Home.aspx">
+                        <img class="img-logo" src="../Images/logo-delifood.png" alt="Go To DeliFood" />
+                    </a>
+                </div>
+                <div id="toggle" class="nav-block" style="cursor:pointer">
+                    <i class="fa-solid fa-bars"></i>
+                    <ul id="menuToggle" style="display:none">
+                        <li class="nav-item"><a class="nav-link  active" href="Home.aspx">Đồ ăn</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Thực phẩm</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Đồ uống</a></li>
+                    </ul>
+                </div>
+                <div id="menuHeader" class="nav-block">
+                    <ul class="menu-h">
+                        <li class="nav-item"><a class="nav-link  active" href="Home.aspx">Đồ ăn</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Thực phẩm</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Đồ uống</a></li>
+                    </ul>
+                </div>
+                <div class="nav-block">
+                    <div id="cart">
+                        <a href="Cart.aspx"><i class="fa-solid fa-bag-shopping"></i></a>
+                        <span id="countFloat"></span>
+                    </div>
+                    <div id="userAccount" runat="server" class="nav-block">
+                        <button id="signIn" runat="server" type="button" onserverclick="SignIn">
+                            Đăng Nhập
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <%--BODY-CONTENT--%>
+        <div class="body-content">
+            <asp:ContentPlaceHolder ID="MainContent1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <hr />
+        <%--FOOTER--%>
+        <footer>
+            <div class="container">
+                <div class="footer-block">
+                    <p class="title-footer-block">Công ty</p>
+                    <ul class="menu-footer">
+                        <li class="menu-item"><a class="link" href="#">Giới thiệu</a></li>
+                        <li class="menu-item"><a class="link" href="#" target="_blank" rel="noopener noreferrer">Trung tâm Trợ giúp</a></li>
+                        <li class="menu-item"><a class="link" href="#">Quy chế</a></li>
+                        <li class="menu-item"><a class="link" href="#">Điều khoản sử dụng</a></li>
+                        <li class="menu-item"><a class="link" href="#">Bảo mật thông tin</a></li>
+                        <li class="menu-item"><a class="link" href="#">Giải quyết khiếu nại</a></li>
+                        <li class="menu-item"><a class="link" href="#">Liên hệ</a></li>
+                        <li class="menu-item"><a class="link" href="#">Hợp tác nhân viên giao nhận</a></li>
+                        <li class="menu-item"><a class="link" href="#">Đăng ký quán</a></li>
+                        <li class="menu-item"><a class="link" href="#">DeliFood Uni</a></li>
+                        <li class="menu-item"><a class="link" href="#" target="_blank" rel="noopener noreferrer">Deli Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-block">
+                    <p class="title-footer-block">Ứng dụng DeliFood</p>
+                    <a class="link-apps" target="_blank" rel="noopener noreferrer nofollow" href="#" title="Down app iOS">
+                        <span class="apps-app-store" title="Down app iOS"></span>
+                    </a>
+                    <a class="link-apps" target="_blank" rel="noopener noreferrer nofollow" href="#" title="Down app Android">
+                        <span class="apps-play-store" title="Down app Android"></span>
+                    </a>
+                </div>
+                <div class="footer-block logo-center">
+                    <div class="logo-footer logo-block">
+                        <a class="link" href="#">
+                            <img class="img-logo" src="../Images/logo-delifood.png" alt="Đặt món trực tuyến giao hàng tận nơi" title="Đặt món trực tuyến giao hàng tận nơi"></a>
+                    </div>
+                    <p class="font12">&copy; <%: DateTime.Now.Year %> DeliFood</p>
+                    <ul class="social-ico">
+                        <li><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.facebook.com/profile.php?id=100048143435485" title="Facebook"><span class="facebook ico"><i class="fa-brands fa-facebook fb"></i></span></a></li>
+                        <li><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.instagram.com/hsusjsjsjahhw626/" title="Instagram"><span class="instagram ico"><i class="fa-brands fa-instagram"></i></span></a></li>
+                    </ul>
+                </div>
+                <div class="footer-block block-end">
+                    <p class="title-footer-block">Địa chỉ công ty</p>
+                    <div>
+                        <p>Công Ty Cổ Phần DeliFood</p>
+                        <p>Đi tít vào trong</p>
+                        <p>số 96 phố định công, phường Thịnh Liệt, Quận Thanh Xuân, TP Hà Nội</p>
+                        <p>Chịu trách nhiệm quản lý nội dung: Mikazuki August</p>
+                        <p>Điện thoại liên hệ: 0123456789</p>
+                        <p>Email: <a class="link" href="#">vtuan-btuan-ptruong@delifood.vn</a></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </form>
+    <script src="../JS/Nav.js">
+    </script>
+    <script src="../JS/PaginationActive.js">
+    </script>
+    <script src="../JS/ScrollBookMark.js">
+    </script>
+    <script>
+        document.getElementById('toggle').addEventListener('click', function () {
+            var elm = document.getElementById('menuToggle');
+            if (elm.style.display === 'none') {
+                elm.style.display = 'block';
+            } else {
+                elm.style.display = 'none';
+            }
+        });
+
+        var basket = JSON.parse(localStorage.getItem("basket"));
+        if (basket.items.length > 0) {
+            var elm = document.getElementById('countFloat');
+            elm.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+﻿p {
+    margin: 0;
+    padding-block: 5px;
+}
+
+#restaurantPage .container {
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 20%;
+}
+
+#avatar {
+    height: 300px;
+    width: 500px;
+    margin-inline-end: 20px;
+    box-sizing: border-box;
+}
+
+.partner {
+    position: absolute;
+    top: 20px;
+    left: 15px;
+}
+
+.avatar-food img {
+    width: 100px;
+    height: 60px;
+    object-fit: fill;
+    object-position: center;
+}
+
+#avatar img {
+    /*object-fit:cover;
+    object-position:center;*/
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+    object-position: center;
+}
+
+.menu-restaurant-block {
+    display: flex;
+    flex-direction: row;
+}
+
+.menu-restaurant-tab {
+    width: 100%;
+}
+
+.col-menu {
+    padding: 15px 5px 15px 15px;
+    border: 1px solid #ebebeb;
+    border-radius: 4px;
+    margin-inline: 10px;
+    width: 30%;
+}
+
+    .col-menu li {
+        cursor: pointer;
+    }
+
+.col-food-list {
+    padding: 6px 15px;
+    float: right;
+    border: 1px solid #ebebeb;
+    border-radius: 4px;
+    width: 70%;
+}
+
+.input-group {
+    position: relative;
+}
+
+    .input-group i {
+        position: absolute;
+        padding: 15px;
+        line-height: 10px;
+        top: 5px;
+        left: 0;
+    }
+
+.search-items {
+    /* position:sticky;
+    top:70px;
+    background-color:white;
+    z-index:98;*/
+}
+
+    .search-items input {
+        width: 100%;
+        padding: 0 40px;
+        border: 1px solid #E3E3DA;
+        height: 40px;
+        font-size: 18px;
+    }
+
+        .search-items input:focus {
+            border: 1px solid #E3E3DA;
+            outline: none;
+        }
+
+.infomation-restaurant-all {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.food-row {
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.more-reviews a {
+    text-decoration: none;
+    color: #0288d1;
+}
+
+    .more-reviews a:visited {
+        color: #0288d1;
+    }
+
+    .more-reviews a:hover {
+        color: #015785;
+    }
+
+.avatar-food {
+    width: 100px;
+    height: 60px;
+}
+
+.food-desc {
+    width: 80%;
+}
+
+.food-price {
+    width: 20%;
+    white-space: nowrap;
+    color: #0288d1;
+    font-weight: 700;
+}
+
+summary {
+    cursor: pointer;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f1f1f1;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+@media only screen and (max-width: 768px) {
+    #restaurantPage .container {
+        padding: 10px 0;
+    }
+
+    .food-row {
+        flex-direction: column;
+        height: auto;
+    }
+}

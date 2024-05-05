@@ -1,0 +1,509 @@
+﻿* {
+    font-family: 'Segoe UI';
+    box-sizing: border-box;
+}
+body{
+    margin:0;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary-color: #FE5621;
+    --anchor-color: black;
+    --height-val: 40px;
+    --padding-page: 100px;
+    --font-size-normal: 18px;
+    --height-nav: 70px;
+}
+
+#form1 {
+    padding-block-start: var(--height-nav);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 5px 5px 0px rgba(60, 64, 67, 0.167), 0px 2px 3px 1px rgba(60, 64, 67, 0.084);
+    padding: 0 80px;
+    height: var(--height-nav);
+}
+
+    nav .container {
+        height: inherit;
+    }
+
+.nav-block {
+    display: flex;
+    align-items: center;
+    margin-inline: 20px;
+}
+/*CHUNG CHO LOGO-HEADER VÀ LOGO-FOOTER*/
+.logo-block {
+    display: flex;
+    align-items: center;
+}
+
+.img-logo {
+    width: 200px;
+    height: fit-content;
+    object-fit: cover;
+}
+
+nav select {
+    font-size: 15px;
+    border: none;
+}
+
+#toggle{
+    display:none;
+}
+
+#menuToggle{
+    display:none;
+}
+select:focus {
+    border: none;
+    outline: none;
+}
+
+.menu-h {
+    display: flex;
+    margin-block: 0px;
+    font-weight: 700;
+}
+
+.nav-block ul li a {
+    display: block;
+    white-space: normal;
+    height: var(--height-nav);
+    font-size: var(--font-size-normal);
+    padding: 5px;
+    align-content: center;
+}
+
+    .nav-block ul li a:hover {
+        color: var(--primary-color);
+    }
+
+.nav-item {
+    margin-inline: 25px;
+}
+
+.nav-link.active {
+    color: var(--primary-color);
+    border-bottom: 4px solid var(--primary-color);
+}
+
+ul, li {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+#cart {
+    position:relative;
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+    background-color: var(--primary-color);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-inline-end:10px;
+}
+
+    #cart  i {
+        color: white;
+        margin-block: 0;
+        border: none;
+        padding: 10px 10px;
+    }
+#countFloat{
+    position:absolute;
+    top:-5px;
+    background-color:red;
+    right:-5px;
+    color:white;
+    border-radius:50%;
+    width:15px;
+    height:15px;
+    display:none;
+    text-align:center;
+}
+a {
+    text-decoration: none;
+    color: var(--anchor-color);
+}
+
+    a:visited {
+        color: var(--anchor-color);
+    }
+
+#userAccount {
+    position: relative;
+    height: var(--height-val);
+    cursor: pointer;
+}
+#userAccount2 {
+    position: relative;
+    height: var(--height-val);
+    cursor: pointer;
+}
+
+    #userAccount button {
+        cursor: pointer;
+        font-size: var(--font-size-normal);
+        background-color: var(--primary-color);
+        border: none;
+        color: white;
+        padding-inline: 10px;
+        height: var(--height-val);
+        align-content: center;
+        white-space: nowrap; /* Ngăn chặn phá dòng */
+        overflow: hidden; /* Ẩn phần vượt quá chiều rộng */
+        text-overflow: ellipsis; /* Hiển thị dấu ba chấm cho phần vượt quá */
+        max-width: 100%; /* Chiều rộng tối đa của nút */
+    }
+#userAccount2 button {
+    cursor: pointer;
+    font-size: var(--font-size-normal);
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+    padding-inline: 10px;
+    height: var(--height-val);
+    align-content: center;
+    white-space: nowrap; /* Ngăn chặn phá dòng */
+    overflow: hidden; /* Ẩn phần vượt quá chiều rộng */
+    text-overflow: ellipsis; /* Hiển thị dấu ba chấm cho phần vượt quá */
+    max-width: 100%; /* Chiều rộng tối đa của nút */
+}
+
+    #userAccount:hover > .dropdown {
+        visibility: visible;
+    }
+#userAccount2:hover > .dropdown {
+    visibility: visible;
+}
+
+    #userAccount img {
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        object-fit: fill;
+        object-position: center;
+    }
+#userAccount2 img {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    object-fit: fill;
+    object-position: center;
+}
+
+#nameUser {
+    margin-inline-start: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#userAccount i {
+    margin-block: 0;
+    border: none;
+    font-size: 20px;
+    margin-inline-start: 5px;
+}
+#userAccount2 i {
+    margin-block: 0;
+    border: none;
+    font-size: 20px;
+    margin-inline-start: 5px;
+}
+
+.dropdown {
+    visibility: hidden;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    white-space: nowrap;
+    border: solid 1px rgba(0, 0, 0, .15);
+    border-radius: 3px;
+    width: inherit;
+    z-index: 1000;
+    box-shadow: 0px 5px 5px 0px rgba(60, 64, 67, 0.167), 0px 2px 3px 1px rgba(60, 64, 67, 0.084);
+    background-color: white;
+}
+
+.dropdown-item {
+    padding-block: 15px;
+}
+
+    .dropdown-item:hover {
+        background-color: #D7D3D9;
+    }
+
+.order-history i {
+    color: #6cc942;
+    border-block-end: solid 1px #E3DFD7;
+}
+
+.update-acc i {
+    color: #0288d1;
+    border-block-end: solid 1px #E3DFD7;
+}
+
+.logout i {
+    color: red;
+}
+
+/*BODY*/
+
+
+/*FOOTER*/
+footer {
+    padding: 10px 5%;
+}
+
+    footer > .container {
+        align-items: flex-start;
+    }
+
+.footer-block ul li {
+    margin-block: 1em;
+}
+
+.title-footer-block {
+    font-size: var(--font-size-normal);
+    font-weight: 700;
+}
+
+.block-end {
+    text-align: end;
+}
+
+.social-ico li {
+    display: inline-block;
+    padding: 0 8px;
+}
+
+    .social-ico li i {
+        border-radius: 50%;
+        font-size: 30px;
+    }
+
+.logo-center {
+    align-self: center;
+}
+
+    .logo-center p {
+        margin-block: 0;
+    }
+
+    .logo-center i {
+        border: solid 1px var(--primary-color);
+        color: var(--primary-color);
+        padding: 3px;
+    }
+
+.link {
+    color: blue;
+}
+
+    .link:visited {
+        color: blue;
+    }
+
+.link-apps {
+    width: 122px;
+    height: 40px;
+    display: grid;
+    margin-bottom: 25px;
+}
+
+.apps-app-store {
+    background-image: url(../Images/AppStore-vn.png);
+    background-size: cover;
+}
+
+.apps-play-store {
+    background-image: url(../Images/PlayStore-vn.png);
+    background-size: cover;
+}
+
+@media screen and (max-width: 1024px) {
+    .img-logo {
+        width: 150px;
+        height: fit-content;
+        object-fit: cover;
+    }
+    :root {
+        --font-size-normal: 13px;
+    }
+
+    #userAccount img {
+        height: 45px;
+        width: 45px;
+    }
+    #userAccount2 img {
+        height: 45px;
+        width: 45px;
+    }
+
+    #nameUser {
+        margin-inline-start: 2px;
+    }
+
+    #userAccount i {
+        font-size: 18px;
+    }
+    #userAccount2 i {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #toggle {
+        display: block;
+        position: relative;
+    }
+
+    #logoHeader {
+        display: none;
+    }
+    #logoHeader2 {
+        display: none;
+    }
+
+    nav {
+        padding: 0 1%;
+    }
+    #userAccount img {
+        height: 40px;
+        width: 40px;
+    }
+    #userAccount2 img {
+        height: 40px;
+        width: 40px;
+    }
+
+    #nameUser {
+        margin-inline-start: 2px;
+    }
+
+    #userAccount i {
+        font-size: 15px;
+    }
+    #userAccount2 i {
+        font-size: 15px;
+    }
+    #menuToggle {
+        width: 50%;
+        position: fixed;
+        top: 72px;
+        z-index: 1000;
+        background-color: white;
+        box-shadow: 0px 5px 5px 0px rgba(60, 64, 67, 0.167), 0px 2px 3px 1px rgba(60, 64, 67, 0.084);
+    }
+
+    #menuHeader {
+        display: none;
+    }
+    #userAccount{
+    }
+    .nav-item {
+        margin-inline: 0;
+    }
+
+    :root {
+        --font-size-normal: 13px;
+    }
+
+    .nav-block {
+        margin-inline: 5px;
+    }
+    footer {
+        padding: 10px 1%;
+    }
+        footer > .container {
+            align-items: flex-start;
+            flex-direction:column;
+        }
+    .block-end {
+        text-align: start;
+    }
+    .logo-center {
+        align-self: start;
+    }
+}
+@media only screen and (max-width: 860px) {
+    #toggle {
+        display: block;
+        position: relative;
+    }
+
+    #logoHeader {
+        display: none;
+    }
+    #logoHeader2 {
+        display: none;
+    }
+
+    nav {
+        padding: 0 2%;
+    }
+
+    #menuToggle {
+        width: 50%;
+        position: fixed;
+        top: 72px;
+        z-index: 1000;
+        background-color: white;
+        box-shadow: 0px 5px 5px 0px rgba(60, 64, 67, 0.167), 0px 2px 3px 1px rgba(60, 64, 67, 0.084);
+    }
+
+    #menuHeader {
+        display: none;
+    }
+    #userAccount{
+    }
+    .nav-item {
+        margin-inline: 0;
+    }
+
+    :root {
+        --font-size-normal: 13px;
+    }
+
+    .nav-block {
+        margin-inline: 10px;
+    }
+    footer {
+        padding: 10px 2%;
+    }
+        footer > .container {
+            align-items: flex-start;
+            flex-direction:column;
+        }
+    .block-end {
+        text-align: start;
+    }
+    .logo-center {
+        align-self: start;
+    }
+}

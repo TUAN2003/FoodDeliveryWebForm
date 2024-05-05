@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Đăng Nhập</title>
+    <link rel="stylesheet" href="../fontawesome-free-6.2.1-web/css/all.min.css" />
+    <link rel="stylesheet" href="../Css/Login.css" />
+</head>
+<body>
+    <form action="../WebForms/Login.aspx" method="post" class="box" onsubmit="return handleSubmit()">
+        <div class="content">
+            <div class="title">
+                <h2 class="text-title">Đăng Nhập</h2>
+                <i class="fa-solid fa-pizza-slice icon"></i>
+            </div>
+            <div class="form-input">
+                <input type="tel" id="phone" name="phone" placeholder="Số điện thoại" />
+                <input type="password" id="password" name="password" placeholder="Mật khẩu" />
+            </div>
+            <div id="alertFail">
+            </div>
+            <button type="submit" class="btn-login">Đăng Nhập</button>
+            <div class="another-login">
+                <a href="#">Quên mật khẩu?</a>
+                <a href="#">Đăng nhập với SMS</a>
+            </div>
+            <div class="connect-login-other-form">
+                <div>
+                    <i class="fa-brands fa-facebook fb"></i>
+                    <span>Facebook</span>
+                </div>
+                <div>
+                    <i class="fa-brands fa-google gg"></i>
+                    <span>Google</span>
+                </div>
+                <div>
+                    <i class="fa-brands fa-apple ap"></i>
+                    <span>Apple</span>
+                </div>
+            </div>
+            <div class="redirect-register">
+                <span class="text-redirect">Bạn đã có tài khoản chưa ? </span>
+                <a href="../WebForms/Register.aspx">Đăng ký</a>
+            </div>
+        </div>
+    </form>
+    <script>
+        let _phone = document.getElementById('phone');
+        let _password = document.getElementById('password');
+        let _alertFail = document.getElementById('alertFail');
+
+        let url = window.location.search;
+        let usp = new URLSearchParams(url);
+        let warn = usp.get("warn");
+
+        if (warn != null) {
+            alertFail(warn);
+        }
+
+        // Xử lí phía client
+        function handleSubmit() {
+            var phone = _phone.value;
+            if (phone === '') {
+                alertFail('Số điện thoại không được để trống');
+                _phone.focus();
+                return false;
+            }
+            var password = _password.value;
+            if (password === '') {
+                alertFail('Mật khẩu không được để trống');
+                _password.focus();
+                return false;
+            }
+            return true;
+        }
+
+        function alertFail(msg) {
+            _alertFail.innerHTML = `<img src="../Images/warning.png" alt="Warning" /> ${msg}`;
+            _alertFail.style.display = 'flex';
+        }
+    </script>
+</body>
+</html>
